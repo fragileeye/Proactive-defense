@@ -1,0 +1,11 @@
+D:\c#代码\SimProcess\SimProcess\bin\Debug\SimProcess.exe.config
+D:\c#代码\SimProcess\SimProcess\bin\Debug\SimProcess.exe
+D:\c#代码\SimProcess\SimProcess\bin\Debug\SimProcess.pdb
+D:\c#代码\SimProcess\SimProcess\bin\Debug\SimSharp.dll
+D:\c#代码\SimProcess\SimProcess\bin\Debug\SimSharp.pdb
+D:\c#代码\SimProcess\SimProcess\bin\Debug\SimSharp.xml
+D:\c#代码\SimProcess\SimProcess\obj\Debug\SimProcess.csproj.CoreCompileInputs.cache
+D:\c#代码\SimProcess\SimProcess\obj\Debug\SimProcess.csproj.CopyComplete
+D:\c#代码\SimProcess\SimProcess\obj\Debug\SimProcess.exe
+D:\c#代码\SimProcess\SimProcess\obj\Debug\SimProcess.pdb
+D:\c#代码\SimProcess\SimProcess\bin\Debug\Gnu.Getopt.dll

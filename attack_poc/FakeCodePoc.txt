@@ -1,0 +1,30 @@
+Input: captured_packets, T 
+output: reconstructed session_pool
+
+function SessionReconstructor(captured_packets, T):
+    session_pool = ∅
+    //Phase1: merge sessions which haven't experienced hopping.
+    for packet in captured_packets do
+        extract time, ip header, tcp header from packet  
+        connection = (ip.src, ip.dst, tcp.src, tcp.dst)
+        signatures = (time, tcp.seq, tcp.ack, tcp.data)
+        session = (connection, signatures)
+        found_session = get_session(session_pool, connection)
+        if found_session is null then
+            add_session(session_pool, found_session)
+        else
+            //merge tcp data and update signatures of seq, ack and time
+            merge_session(found_session, session)
+        endif
+    end for
+    //Phase2: merge sessions which have experienced hopping     
+    reverse_sort(session_pool, sort_by=(time, seq))
+    for session in session_pool do
+        repeat find next_session in session_pool do
+            delta_time = session.time - next_session.time
+        until delta_time > T or next_session.ack == session.seq
+        if next_session.ack == session.seq then
+            merge_session(next_session, session)
+        end if 
+    end for
+    return session_pool
